@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //변수(variable) : 변하는 데이터(값)을 저장 할 수 있는 메모리 공간이다.
+        //var, let, const
+        // console.log(3);
+        // console.log(3);
+
+        let data = 3;  //변수 선언
+        console.log(data);
+        console.log('data:%d', data);
+
+        //출력기호 : %d(숫자), %s(문자열), %b(논리)
+
+        let a='javascript';
+        console.log(`a=%s`,a);
+
+        let b = true;
+        console.log(`b=${b}`); //논리값은 소문자로 true or false
+        
+        let c = 4.58;
+        console.log(`c=%f`,c);  //소수점이 있는 값은 크롬에서 출력이 지원이 안됨
+        //https://developer.mozilla.org/ko/docs/web/api/console 에서 찾아보기
+
+        let d = null;
+        console.log(`d=${d}`);
+        
+        //Uncaught ReferenceError: e is not defined
+       console.log(`e=${e}`);
+       documents.write(e);
+    </script>
+</body>
+</html>
