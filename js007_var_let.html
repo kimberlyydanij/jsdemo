@@ -9,18 +9,16 @@
 <body>
     <script>
 
+        //변수 선언 전 : Uncaught ReferenceError: foo is not defined
+        //변수 선언 후 : foo:undefined 
         console.log(`foo:${foo}`);
-        //Uncaught ReferenceError: foo is not defined
 
-
+        //변수 선언 전 : Uncaught ReferenceError: bar is not defined
+        //변수 선언 후 : Uncaught ReferenceError: Cannot access 'bar' before initialization
         console.log(`bar:${bar}`);
-        // Uncaught ReferenceError: bar is not defined
 
         var foo;
-        //foo:undefined 
-
         let bar;
-        // Uncaught ReferenceError: Cannot access 'bar' before initialization
 
     </script>
 </body>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> js009_datatype.html </title>
+</head>
+<body>
+    <script>
+        //datatype : primitive datatype(기본 데이터 타입), reference datatype(참조 데이터 타입)
+        let num = 3;
+        console.log(typeof num); //typeof(num)
+        console.log(num);
+
+        num = '3';
+        console.log(typeof num);
+        console.log(num);
+
+        // java와 달리 javascript 는 문법이 엄격하지 않아 변수의 타입이 변경 가능하기 때문에 typeof 명령어를 사용해서
+        // 현재 변수의 타입을 확인한다.
+
+        let avg = 4.5;
+        console.log(`avg=${avg}`, `${typeof avg}`);
+        // 정수와 실수를 구분하지 않는다.
+
+        let check = true;
+        console.log(`check=${check}, ${typeof check}`);
+
+        let data = 'javascript';
+        console.log(`data=${data}, ${typeof data}`);
+
+        let na = undefined;
+        console.log(`na=${na}, ${typeof na}`);
+
+        let name = null;
+        console.log(`na=${name}, ${typeof name}`);
+
+        let loc = new String('node');
+        console.log(`loc=${loc}, ${typeof loc}`);
+        console.log(`loc= ${loc instanceof String}`);
+        // 어떤 데이터 타입인지 물어볼때? instanceof 맞으면 true 틀리면 false.
+
+        let jumsu = new Number(10);
+        console.log(`jumsu=${jumsu}, ${typeof jumsu}`);
+        console.log(`jumsu=${jumsu instanceof Number}`);
+
+        //익명함수, 변수의 값으로 사용되는 함수는 익명함수로 정의한다.
+        let fn = function(){
+            console.log('function');
+        };
+        console.log(`fn=${fn}, ${typeof fn}`); //fn=function(){  console.log('function'); }, function
+
+        let arr = [1,2,3];
+        console.log(`arr=${arr}, ${typeof arr}`); //arr1,2,3, object
+        console.log(`arr=${arr instanceof Array}`); //arr=true
+
+        let customer = { name : '홍길동', age : 30};
+        console.log(`customer=${customer}, ${typeof customer}`); //customer=[object Object], object
+        console.log(`customer=${customer instanceof Object}`); //customer=true
+
+        console.log(`${customer.name}, ${customer.age}`); // 홍길동, 30
+
+    </script>
+</body>
+</html>
