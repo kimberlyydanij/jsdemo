@@ -30,6 +30,10 @@ if(apple%10==0) {
 } else console.log(`현재 사과의 수 = ${apple}개, 필요한 바구니의 수 = ${(parseInt(apple/10+1))}`);
 console.log("================");
 console.log("문제 3. switch~case문을 이용해서 차량5부제 프로그램을 구현하시오.");
+
+
+/* ? / : 기능 확인할것 
+
 /*
   [문제3]
   switch~case문을 이용해서 차량5부제 프로그램을 구현하시오.
@@ -96,15 +100,12 @@ console.log("================");
 console.log("문제 5. 10=2x+3y의 해를 구하시오.");
 
 for(let x = 0; x<=10; x++) {
-  for (let y = 0; y<=10; y++) {
-    2x=3y/10;
-    console.log(`x =${x}, y={$}`);
-  }
-}
-console.log(`x =${x}`, y={$}`);
-
-
-/*  
+  for(let y = 0; y<=10; y++) {
+    if ( (2*x)+(3*y)==10) {
+      console.log(`x =${x}, y=${y}`);
+    }   }   }
+    console.log("================");
+  /*  
  [문제5]
  * 1 10=2x+3y의 해를 구하시오.
  *   x와y의 범위 : 0<=x<=10,  0<=y<=10

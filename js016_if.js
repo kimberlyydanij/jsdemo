@@ -4,6 +4,7 @@
 1. 조건문 : if-else
 2. 선택문 : switch ~ case
 3. 반복문 : for, while
+4. label(임의로 정의) : continue, break
 
 조건문 : 조건식의 값이 참인지 거짓인지에 따라 실행문의 제어가 결정된다.
 
