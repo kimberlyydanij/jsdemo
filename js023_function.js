@@ -132,3 +132,112 @@ function outer(a,b) {
 }
 
 console.log(outer(10,3)); //13
+
+//콜백함수
+//1. 다른 함수의 인수로 사용되는 함수
+//2. 어떤 이벤트에 의해 호출되는 함수 : btn.onclick = fuction(){}
+// 다른함수에 인수로 전달된 함수이며 외부 함수 내부에서 호출되어 일종의 루틴이나 작업을 완료한다.
+function callback(a,b){
+    return a+b;
+}
+function getNumber(callFunc) {
+    console.log(`==: ${callFunc}`);
+    let result = callFunc(1,6);
+    return result;
+}
+console.log(getNumber(callback));
+
+//클로저(closure)
+/*
+1) 중첩함수는 outer(외부)함수가 끝나면 외부에서 outer(외부)함수의 자원을 사용할 수 없다.
+2) 클로저는 outer(외부)함수보다 중첩 함수가 더 오래 유지되는 경우 중첩 함수는 이미 생명주기가 종료한
+외부함수의 변수를 참조할수 있다. 이러한 중첩함수가 클로저(closer)이다.
+3) 클로저는 변수가 의도치않게 변경되지 않도록 안전하게 은닉(infornation hiding)하고 특정 함수에게만 상태변경을
+허용하여 상태를 안전하게 변경하고 유지하기 위해 사용한다.
+*/
+
+function outerFun(){
+    let sum = 50;
+  
+    function innerFun() {
+        return sum;
+    }
+    return innerFun;
+}
+console.log(outerFun()); //[Function: innerFun]
+
+let outerCall = outerFun();
+console.log(outerCall); //[Function: innerFun]
+
+function testA(){
+console.log('testA before');
+testB();
+console.log('testA after');
+}
+function testB(){
+    console.log('testB before');
+    testC();
+    console.log('testB after');
+    }
+function testC(){
+    console.log('testC');
+    }
+testA();
+        
+/////////////////////////////
+//함수 파라미터
+function display(a,b){
+    console.log(`a=${a}, b=${b}`);
+}
+display(1,2); //a=1, b=2
+display(1); //a=1, b=undefined
+display(1,2,3,4,5); //a=1, b=2
+
+//(1) 기본 파라미터(default parameter) : ES6-2015 
+function display2(a=0, b=0){
+    console.log(`a=${a}, b=${b}`);
+}
+display2(1,2); //a=1, b=2
+display2(1); //a=1, b=0
+display2(1,2,3,4,5); //a=1, b=2
+
+//(2) 나머지 파라미터(Rest Parameter) : ES6-2015
+//파라미터 갯수를 가변으로 사용할 수 있도록 제공해주는 연산자이다.
+//Spread operator(점 3개(...))를 맨 마지막 파라미터로 사용해주면 된다.
+
+//Spread operator를 단독으로 사용
+function display3(...args){
+    console.log(args);
+    console.log(typeof args, args instanceof Array);
+}
+display3(1,2);
+display3(1);
+display3(1,2,3,4,5);
+
+// spread operator를 고정파라미터와 같이 사용할때는 맨 마지막에 사용 한다.
+function display4(num, ...args){
+    console.log(num);
+    console.log(args);
+}
+display4(1,2); // 1 [ 2 ]
+display4(1); // 1 []
+display4(1,2,3,4,5); // 1 [ 2, 3, 4, 5 ]
+
+// arguments 객체
+// - 함수 안에서만 기본으로 사용할 수 있는 자바스크립트 객체이다.
+// - 함수 런타임 시점에 자동으로 생성되는 객체이며, 함수 코드 및 파라미터는 무관하게 자동 생성된다.
+// - 함수 호출할 떄 함수로 전달 된 실제 인자들의 정보를 담고 있는 객체이다.
+// - 함수 선언에서 파라미터로 정의한 변수 갯수보다 실제 함수 호출할 때 전달하는 인수의 갯수가 다를 수 있는
+//   자바스크립트의 특성을 고려해 만들어진 객체이다.
+function display5(){
+    let result=0;
+    for (let i =0; i<arguments.length;i++){
+        console.log(typeof arguments, arguments instanceof Array, arguments.callee);
+        console.log(arguments[i]);
+    }
+}
+display5(1,2); // 
+/*
+display5(1); // 
+display5(1,2,3,4,5); */
+
