@@ -94,4 +94,22 @@ do {
     pos = pos + 1;
     pos = data.indexOf('blue',pos);
     if (pos != -1) console.log(pos);
-} while (pos != -1);
+} while (pos != -1); 
+
+let pos1 = 0
+for(i=0;i<data.length;i++)
+{   pos1 = pos1 + 1;
+    pos1 = data.indexOf('blue',pos1)
+    if (pos1 == -1) break;
+    console.log(pos1);
+} 
+
+//repeat;
+let text = 'korea';
+console.log(text.repeat(10));
+text="*";
+console.log(text.repeat(10));
+
+let text2 = '  korea  data   ';
+console.log(text2.length); // 16
+console.log(text2.trim().length);  //11 trim 양사이드  공백 제거
