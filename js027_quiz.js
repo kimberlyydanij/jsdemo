@@ -57,6 +57,7 @@ let person2 = { name: '진여구', phone: '010-253-2253' };
 console.log('\n//문제2//');
 let person1 = {name: '홍길동', phone: '010-1234-5678'};
 let person2 = {name: '진여구', phone: '010-253-2253'};
+let person3 = {name: '정다운', phone: '010-8264-6896'};
 let pnum='';
 function display(customer) {
   console.log(`이름 : ${customer.name}`);
@@ -75,4 +76,5 @@ function display(customer) {
 }
 display(person1);
 display(person2);  
+display(person3); 
 
