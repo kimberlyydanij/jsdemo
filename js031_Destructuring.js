@@ -24,3 +24,49 @@ let k, p, next;
 console.log(`k= ${k}`); // k= 1
 console.log(`p= ${p}`); // p= 2
 console.log(`next= ${next}`); // next= 3
+[k,p, ...next] = [1,2,3,4,5,6,7,8];
+console.log(`k= ${k}`); // k= 1
+console.log(`p= ${p}`); // p= 2
+console.log(`next= ${next}`); // next= 3,4,5,6,7,8
+[k, , p, , ...next] = [1,2,3,4,5,6,7,8];
+console.log(`k= ${k}`); // k= 1
+console.log(`p= ${p}`); // p= 3
+console.log(`next= ${next}`); // next= 5,6,7,8
+[k, _, p, _, ...next] = [1,2,3,4,5,6,7,8];
+console.log(`k= ${k}`); // k= 1
+console.log(`p= ${p}`); // p= 3
+console.log(`next= ${next}`); // next= 5,6,7,8
+
+let u,t,w;
+[u, t, w] = [1,2];
+console.log(`u= ${u}`); // u= 1
+console.log(`t= ${t}`); // t= 2
+console.log(`w= ${w}`); //w= undefined
+
+[u, t, w =3 ] = [1,2];
+console.log(`u= ${u}, t= ${t}, w= ${w}`); //u= 1, t= 2, w= 3
+
+[u, t= 4, w =5 ] = [1,2];
+console.log(`u= ${u}, t= ${t}, w= ${w}`); //u= 1, t= 2, w= 5
+
+//2. 객체 Destructuring(구조 분해 할당)
+let s, r;
+
+const customer = {fullname: '고수', job: '연기자'};
+let fullname = customer.fullname;
+let job = customer.job;
+console.log(`fullname:${fullname}, job:${job}`); // fullname:고수, job:연기자
+
+let {fullname: fn, job: jb} = customer;
+console.log(`fullname: ${fn} job: ${jb}`); // fullname: 고수 job: 연기자
+
+let {job: work, fullname: fname} = customer;
+console.log(`job: ${work} fullname: ${fname}`); // job: 연기자 fullname: 고수
+
+let {fullname: name, job: jbn, loc ='서울'} = customer;
+console.log(`fullname: ${name}, job: ${jbn}, loc: ${loc}`); // fullname: 고수, job: 연기자, loc: 서울
+
+({s, r} = {s:1, r:2});
+console.log(`s=${s}, r=${r}`); // s=1, r=2
+
+///////////////////////////////////////////////////////////
