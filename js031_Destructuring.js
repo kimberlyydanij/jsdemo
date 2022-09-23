@@ -70,3 +70,46 @@ console.log(`fullname: ${name}, job: ${jbn}, loc: ${loc}`); // fullname: 고수,
 console.log(`s=${s}, r=${r}`); // s=1, r=2
 
 ///////////////////////////////////////////////////////////
+// completed의 값이 true 인 데이터만 검색하라.
+
+let habits = [
+    { id: 1, content: '수영', completed: false },
+    { id: 2, content: '걷기', completed: true },
+    { id: 3, content: '명상', completed: true },
+    { id: 4, content: '독서', completed: false }, ];
+
+function htru (data) {
+    for(let i = 0; i<data.length; i++)
+    if(data[i].completed==true)
+    console.log(data[i].content)
+}
+console.log('완료한 활동 :');
+htru(habits);
+
+///////////////
+let completedHabit = habits.filter((element)=> {
+    return element.completed;
+});
+console.log(completedHabit);
+
+/*let listHabit = [];
+for (let i=0;i<habits.length;i++){
+    if(habbits[i].)
+} */
+
+
+///////////////////////////////////
+//member 변수에서 데이터를 추출하여 '고수 고객님은 서울에 거주합니다. 라고 출력하세요.
+let member = {
+    name: '고수',
+    address : {
+        zipCode: '526-143',
+        city: '서울',
+    },
+};
+
+function cad(data) {
+    console.log(`${data.name} 고객님은 ${data.address.city}에 거주합니다.`);
+}
+cad(member);
+
