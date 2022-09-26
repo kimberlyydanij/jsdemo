@@ -1,6 +1,6 @@
 //js_027_Strings
 
-let data = 'It`s alrignt';
+let data = 'It`s alrigt';
 console.log(data);
 
 //length : 문자열의 길이
