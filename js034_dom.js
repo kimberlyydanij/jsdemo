@@ -14,6 +14,7 @@ console.log(hId,  typeof hId);
 let hClass = document.querySelector('.choice');
 console.log(hClass,  typeof hClass);
 
+//HTMLCollection(4)
 let pNode = document.getElementsByTagName('p');
 console.log(pNode,  typeof pNode);
 console.log(pNode.length); //4
