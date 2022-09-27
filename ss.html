@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.wrap div {
+            border-radius: 50px;
+            width:50px;
+            height: 50px;
+            border:1px solid black;
+            background-color: darksalmon;
+            text-align: center;
+            line-height: 50px;
+            float : left;
+            margin-right :10px;
+        }
+        p {
+            width :350px;
+            text-align:center;
+        }
+    </style>
+    
+</head>
+<body>
+    <p> 로또 번호 생성기
+        <p> <button id='btn1'> 번호생성 </button> </p> </p>
+     <br>
+
+    <div class='wrap'>
+    <div class='num' id='n1'>10</div>
+    <div class='num' id='n2'>20</div>
+    <div class='num' id='n3'>30</div>
+    <div class='num' id='n4'>40</div>
+    <div class='num' id='n5'>50</div>
+    <div class='num' id='n6'>60</div>
+     </div>
+     <script>  
+
+        let btn;
+        let a;
+        document.getElementById('btn1').addEventListener('click',num);
+            
+        function num() {
+
+            random();
+            print();
+
+
+          function random() {  
+          let ran = []; 
+          console.log(ran);
+    
+          for(i=0;i<=5;i++) {
+            ran[i] =  Math.round(Math.random() * 100 /2.22);
+            a = [...ran];
+            console.log(a);
+            } 
+            ran.sort();
+
+        }; }
+
+        function print() {
+        let b = document.getElementsByClassName(num);
+        console.log(b);
+        }
+
+           /*
+           for(j=1;j<=6;j++) {
+           document.write(ran[j])
+         }; } */
+         
+        </script>
+</body>
+</html>
