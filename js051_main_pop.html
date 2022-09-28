@@ -27,8 +27,17 @@
         </div>
         <map name='pop' id='pop'>
             <!-- coords='x start, y start, x end, y end'-->
-        <area shape='rect' coords='255,332,290,345' href='#', alt='창닫기' onclick='window.close'>
+        <area shape='rect' coords='255,332,290,345' href='#', alt='창닫기'>
         </map>
     </div>
+    <script>
+        let close=document.querySelector('map#pop area');
+        close.onclick = () => {
+            let popup = document.querySelector('div#popup');
+            popup.style.width='0px';
+            popup.style.height='0px';
+            popup.style.visibility='hidden';
+        };
+    </script>
 </body>
 </html>
